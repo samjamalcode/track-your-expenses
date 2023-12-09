@@ -1,3 +1,10 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+class Expense:
+    def __init__(self, name, category, amount) -> None:
+        # Initializes an Expense object with a name, category, and amount.
+        self.name = name
+        self.category = category
+        self.amount = amount
+
+    def __repr__(self):
+        # Returns a string representation of the Expense object.
+        return f"<Expense: {self.name}, {self.category}, ${self.amount:.2f} >"
