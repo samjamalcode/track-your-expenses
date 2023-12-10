@@ -55,6 +55,7 @@ def save_expense_to_file(expense: Expense, expense_file_path):
     print(f"🎯 Saving User Expense: {expense} to {expense_file_path}")
     with open(expense_file_path, "a") as f:
         f.write(f"{expense.name},{expense.amount},{expense.category},{expense.budget}\n")
+        
 
 
 # Calculated and displayed a summary of expenses 
@@ -107,6 +108,14 @@ def summarize_expenses(expense_file_path, budget):
 def green(text):
     return f"\033[92m{text}\033[0m"
 
+
+# Added a function to check if the user wants to add another expense
+def ask_add_another_expense():
+    response = input("Do you want to add another expense? (yes/no): ").lower()
+    return response == 'yes'
+
+
+
 # Set up the main function to organize the expense tracking process
 def main():
     print(f"🎯 Running Expense Tracker!")
@@ -120,7 +129,7 @@ budget = float(input("Enter your budget for the month: "))
 expense = get_user_expense(budget)
 
 # Define expenses_file_path
-
+expense_file_path = "expenses.csv"
 
 
 # Saved the user's expense to a CSV file for record-keeping
