@@ -96,7 +96,33 @@ def summarize_expenses(expense_file_path, budget):
                 budget=float(expense_budget),
             )
             expenses.append(line_expense)
+    
+    # Enhanced the summary display 
+    # with total spending, remaining budget, and daily budget
+    amount_by_category = {}
+    for expense in expenses:
+        key = expense.category
+        if key in amount_by_category:
+            amount_by_category[key] += expense.amount
+        else:
+            amount_by_category[key] = expense.amount
 
+    print("Expenses By Category 📈:")
+    for key, amount in amount_by_category.items():
+        print(f"  {key}: ${amount:.2f}")
+
+    total_spent = sum([x.amount for x in expenses])
+    print(f"💵 Total Spent: ${total_spent:.2f}")
+
+    remaining_budget = budget - total_spent
+    print(f"✅ Budget Remaining: ${remaining_budget:.2f}")
+
+    now = datetime.datetime.now()
+    days_in_month = calendar.monthrange(now.year, now.month)[1]
+    remaining_days = days_in_month - now.day
+
+    daily_budget = remaining_budget / remaining_days
+    print(green(f"👉 Budget Per Day: ${daily_budget:.2f}"))
 
 
 
