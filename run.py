@@ -3,7 +3,7 @@ import calender
 import datetime
 
 
-# Define the Expense class: Created the Expense class to represent user expenses.
+# Created the Expense class to represent user expenses
 class Expense:
     def __init__(self, name, category, amount, budget) -> None:
         self.name = name
@@ -37,7 +37,8 @@ save_expense_to_file(expense, expense_file_path)
 summarize_expenses(expense_file_path, budget)
 
 
-# Enhanced the expense input by including predefined categories for user selection
+# Enhanced the expense input 
+# by including predefined categories for user selection
 def get_user_expense(budget):
     print(f"🎯 Getting User Expense")
     expense_name = input("Enter expense name: ")
@@ -71,6 +72,11 @@ def get_user_expense(budget):
             print("Invalid category. Please try again!")
 
 
+# Appended the user's expense to the CSV file for future reference
+def save_expense_to_file(expense: Expense, expense_file_path):
+    print(f"🎯 Saving User Expense: {expense} to {expense_file_path}")
+    with open(expense_file_path, "a") as f:
+        f.write(f"{expense.name},{expense.amount},{expense.category},{expense.budget}\n")
 
 
 
