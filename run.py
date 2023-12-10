@@ -21,7 +21,10 @@ def main():
     expense_file_path = "expenses.csv"
 
 
-# Get user input for budget
+# Prompted the user to input their budget for the month
+budget = float(input("Enter your budget for the month: "))
+
+
 # Get user input for expense
 # Write the expense to a file
 # Read file and summarize expenses
