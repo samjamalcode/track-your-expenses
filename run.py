@@ -33,4 +33,5 @@ expense = get_user_expense(budget)
 save_expense_to_file(expense, expense_file_path)
 
 
-# Read file and summarize expenses
+# Developed a function to read the expense file and provide a summary
+summarize_expenses(expense_file_path, budget)
