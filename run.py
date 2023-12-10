@@ -62,19 +62,30 @@ def save_expense_to_file(expense: Expense, expense_file_path):
 # by category and overall spending
 def summarize_expenses(expense_file_path, budget):
     print(f"🎯 Summarizing User Expense")
-    expenses: list[Expense] = []
+    expenses = []
     with open(expense_file_path, "r") as f:
-        # Improved the file reading process for better expense parsing
         lines = f.readlines()
         for line in lines:
-            expense_name, expense_amount, expense_category, expense_budget = line.strip().split(",")
-            line_expense = Expense(
-                name=expense_name,
-                amount=float(expense_amount),
-                category=expense_category,
-                budget=float(expense_budget),
-            )
-            expenses.append(line_expense)
+            # Split each line into values
+            values = line.strip().split(",")
+            # Check if the line has at least three values
+            if len(values) >= 3:
+                expense_name, expense_amount, expense_category = values[:3]
+
+                # Default budget to 0.0 if not specified in the CSV
+                expense_budget = float(values[3]) if len(values) > 3 else 0.0
+                # Create an Expense object
+                line_expense = Expense(
+                    name=expense_name,
+                    amount=float(expense_amount),
+                    category=expense_category,
+                    budget=expense_budget,
+                )
+                # Append to the list of expenses
+                expenses.append(line_expense)
+            else:
+                # Print a message for invalid lines
+                print(f"Ignored invalid line: {line}")
     
     # Enhanced the summary display 
     # with total spending, remaining budget, and daily budget
@@ -124,12 +135,13 @@ def main():
 # Prompted the user to input their budget for the month
 budget = float(input("Enter your budget for the month: "))
 
+# Define expenses_file_path
+expense_file_path = "expenses.csv"
+
 
 # Implemented a function to gather user input for a specific expense
 expense = get_user_expense(budget)
 
-# Define expenses_file_path
-expense_file_path = "expenses.csv"
 
 
 # Saved the user's expense to a CSV file for record-keeping
