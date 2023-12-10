@@ -15,28 +15,6 @@ class Expense:
         return f"<Expense: {self.name}, {self.category}, ${self.amount:.2f}, Budget: ${self.budget:.2f} >"
 
 
-# Set up the main function to organize the expense tracking process
-def main():
-    print(f"🎯 Running Expense Tracker!")
-    expense_file_path = "expenses.csv"
-
-
-# Prompted the user to input their budget for the month
-budget = float(input("Enter your budget for the month: "))
-
-
-# Implemented a function to gather user input for a specific expense
-expense = get_user_expense(budget)
-
-
-# Saved the user's expense to a CSV file for record-keeping
-save_expense_to_file(expense, expense_file_path)
-
-
-# Developed a function to read the expense file and provide a summary
-summarize_expenses(expense_file_path, budget)
-
-
 # Enhanced the expense input 
 # by including predefined categories for user selection
 def get_user_expense(budget):
@@ -128,6 +106,28 @@ def summarize_expenses(expense_file_path, budget):
 # Added a function to colorize console output for better user experience
 def green(text):
     return f"\033[92m{text}\033[0m"
+
+# Set up the main function to organize the expense tracking process
+def main():
+    print(f"🎯 Running Expense Tracker!")
+    expense_file_path = "expenses.csv"
+
+
+# Prompted the user to input their budget for the month
+budget = float(input("Enter your budget for the month: "))
+
+
+# Implemented a function to gather user input for a specific expense
+expense = get_user_expense(budget)
+
+
+# Saved the user's expense to a CSV file for record-keeping
+save_expense_to_file(expense, expense_file_path)
+
+
+# Developed a function to read the expense file and provide a summary
+summarize_expenses(expense_file_path, budget)
+
 
 # Ensured the main function runs when the script is executed directly
 if __name__ == "__main__":
