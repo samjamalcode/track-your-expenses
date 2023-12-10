@@ -60,7 +60,15 @@ def get_user_expense(budget):
         value_range = f"[1 - {len(expense_categories)}]"
         selected_index = int(input(f"Enter a category number {value_range}: ")) - 1
 
-        
+        # Ensured the selected category is valid and created an Expense object
+        if selected_index in range(len(expense_categories)):
+            selected_category = expense_categories[selected_index]
+            new_expense = Expense(
+                name=expense_name, category=selected_category, amount=expense_amount, budget=budget
+            )
+            return new_expense
+        else:
+            print("Invalid category. Please try again!")
 
 
 
