@@ -29,5 +29,8 @@ budget = float(input("Enter your budget for the month: "))
 expense = get_user_expense(budget)
 
 
-# Write the expense to a file
+# Saved the user's expense to a CSV file for record-keeping
+save_expense_to_file(expense, expense_file_path)
+
+
 # Read file and summarize expenses
