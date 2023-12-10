@@ -103,6 +103,14 @@ The site was deployed to Github. The step are as follows:
 
 
 ## Credits
+### How did I get emojis 🍔 🏠:
+
+- I'm on a Mac and there's a shortcut to open the Emoji keyboard (Ctrl + Cmd + Space). There's one for Windows too: Windows key + . (period) or Windows key + ; (semicolon).
+
+- Emojis are just normal unicode characters to Python, so they will show up in VSCode or your terminal just as any other letter would!
+
+
+
 ### Content
 
 - The text for Home page was taken from:
