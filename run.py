@@ -1,3 +1,7 @@
+# Added import statements for calendar and datetime modules
+import calender
+import datetime
+
 
 # Define the Expense class: Created the Expense class to represent user expenses.
 class Expense:
