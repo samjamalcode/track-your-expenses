@@ -138,18 +138,20 @@ budget = float(input("Enter your budget for the month: "))
 # Define expenses_file_path
 expense_file_path = "expenses.csv"
 
+# The loop continues until the user decides not to add more expenses
+while True:
+        # Implement a function to gather user input for a specific expense
+        expense = get_user_expense(budget)
 
-# Implemented a function to gather user input for a specific expense
-expense = get_user_expense(budget)
+        # Save the user's expense to a CSV file for record-keeping
+        save_expense_to_file(expense, expense_file_path)
 
+        # Develop a function to read the expense file and provide a summary
+        summarize_expenses(expense_file_path, budget)
 
-
-# Saved the user's expense to a CSV file for record-keeping
-save_expense_to_file(expense, expense_file_path)
-
-
-# Developed a function to read the expense file and provide a summary
-summarize_expenses(expense_file_path, budget)
+        # Ask the user if they want to add another expense
+        if not ask_add_another_expense():
+            break
 
 
 # Ensured the main function runs when the script is executed directly
