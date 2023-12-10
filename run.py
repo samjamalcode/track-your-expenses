@@ -110,7 +110,6 @@ def green(text):
 # Set up the main function to organize the expense tracking process
 def main():
     print(f"🎯 Running Expense Tracker!")
-    expense_file_path = "expenses.csv"
 
 
 # Prompted the user to input their budget for the month
@@ -119,6 +118,9 @@ budget = float(input("Enter your budget for the month: "))
 
 # Implemented a function to gather user input for a specific expense
 expense = get_user_expense(budget)
+
+# Define expenses_file_path
+
 
 
 # Saved the user's expense to a CSV file for record-keeping
