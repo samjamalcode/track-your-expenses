@@ -1,5 +1,5 @@
 # Added import statements for calendar and datetime modules
-import calender
+import calendar
 import datetime
 
 
@@ -129,7 +129,9 @@ def summarize_expenses(expense_file_path, budget):
 def green(text):
     return f"\033[92m{text}\033[0m"
 
-
+# Ensured the main function runs when the script is executed directly
+if __name__ == "__main__":
+    main()
 
 
 
