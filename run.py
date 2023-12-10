@@ -25,6 +25,9 @@ def main():
 budget = float(input("Enter your budget for the month: "))
 
 
-# Get user input for expense
+# Implemented a function to gather user input for a specific expense
+expense = get_user_expense(budget)
+
+
 # Write the expense to a file
 # Read file and summarize expenses
