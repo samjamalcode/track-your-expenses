@@ -19,8 +19,8 @@ class Expense:
 # by including predefined categories for user selection
 def get_user_expense(budget):
     print(f"🎯 Getting User Expense")
-    expense_name = input("Enter expense name: ")
-    expense_amount = float(input("Enter expense amount: "))
+    expense_name = input("Enter expense name: \n")
+    expense_amount = float(input("Enter expense amount: \n"))
     expense_categories = [
         "🍔 Food",
         "🏠 Home",
@@ -38,7 +38,7 @@ def get_user_expense(budget):
         # Obtained user input for the selected expense category
         value_range = f"[1 - {len(expense_categories)}]"
         selected_index = int(
-            input(f"Enter a category number {value_range}: ")) - 1
+            input(f"Enter a category number {value_range}: \n")) - 1
 
         # Ensured the selected category is valid and created an Expense object
         if selected_index in range(len(expense_categories)):
@@ -123,7 +123,7 @@ def green(text):
 
 # Added a function to check if the user wants to add another expense
 def ask_add_another_expense():
-    response = input("Do you want to add another expense? (yes/no): ").lower()
+    response = input("Do you want to add another expense? (yes/no): \n").lower()
     return response == 'yes'
 
 
@@ -132,7 +132,7 @@ def main():
     print(f"🎯 Running Expense Tracker!")
 
     # Prompted the user to input their budget for the month
-    budget = float(input("Enter your budget for the month: "))
+    budget = float(input("Enter your budget for the month: \n"))
 
     # Define expenses_file_path
     expense_file_path = "expenses.csv"
