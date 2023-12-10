@@ -27,13 +27,21 @@ A flow chart for this application was created by: Lucid https://lucid.app/docume
 
 ## How to Use:
 
-- Run the script and input your monthly budget.
+- Program starts, prompts the user to enter their budget.
 
-- Add individual expenses, including name, amount, and category.
+- Add Expenses: Input the name, cost, and category for each expense.
 
-- Receive a summary of expenses, categorized overview, and real-time budget details.
+- Review Summary: Get a quick overview of spending by category and your remaining budget.
 
-- Decide whether to add more expenses or conclude the tracking.
+- Continue or Finish: Decide whether to add more expenses or conclude your session.
+
+![start](https://github.com/samjamalcode/track-your-expenses/blob/main/images/start.png?raw=true)
+
+![second](https://github.com/samjamalcode/track-your-expenses/blob/main/images/second.png?raw=true)
+
+![third](https://github.com/samjamalcode/track-your-expenses/blob/main/images/third.png?raw=true)
+
+![fouth](https://github.com/samjamalcode/track-your-expenses/blob/main/images/fourth.png?raw=true)
 
 
 ## Technology
