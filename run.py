@@ -79,6 +79,12 @@ def save_expense_to_file(expense: Expense, expense_file_path):
         f.write(f"{expense.name},{expense.amount},{expense.category},{expense.budget}\n")
 
 
+# Calculated and displayed a summary of expenses 
+# by category and overall spending
+def summarize_expenses(expense_file_path, budget):
+    print(f"🎯 Summarizing User Expense")
+    expenses: list[Expense] = []
+    with open(expense_file_path, "r") as f:
 
 
 
