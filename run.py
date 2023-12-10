@@ -51,6 +51,10 @@ def get_user_expense(budget):
     ]
 
     while True:
+        # Presented expense categories for the user to choose from
+        print("Select a category: ")
+        for i, category_name in enumerate(expense_categories):
+            print(f"  {i + 1}. {category_name}")
 
 
 
