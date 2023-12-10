@@ -35,3 +35,37 @@ save_expense_to_file(expense, expense_file_path)
 
 # Developed a function to read the expense file and provide a summary
 summarize_expenses(expense_file_path, budget)
+
+
+# Enhanced the expense input by including predefined categories for user selection
+def get_user_expense(budget):
+    print(f"🎯 Getting User Expense")
+    expense_name = input("Enter expense name: ")
+    expense_amount = float(input("Enter expense amount: "))
+    expense_categories = [
+        "🍔 Food",
+        "🏠 Home",
+        "💼 Work",
+        "🎉 Fun",
+        "✨ Misc",
+    ]
+
+    while True:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
