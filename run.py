@@ -85,6 +85,17 @@ def summarize_expenses(expense_file_path, budget):
     print(f"🎯 Summarizing User Expense")
     expenses: list[Expense] = []
     with open(expense_file_path, "r") as f:
+        # Improved the file reading process for better expense parsing
+        lines = f.readlines()
+        for line in lines:
+            expense_name, expense_amount, expense_category, expense_budget = line.strip().split(",")
+            line_expense = Expense(
+                name=expense_name,
+                amount=float(expense_amount),
+                category=expense_category,
+                budget=float(expense_budget),
+            )
+            expenses.append(line_expense)
 
 
 
