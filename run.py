@@ -15,7 +15,7 @@ class Expense:
         return f"<Expense: {self.name}, {self.category}, ${self.amount:.2f}, Budget: ${self.budget:.2f} >"
 
 
-# Enhanced the expense input 
+# Enhanced the expense input
 # by including predefined categories for user selection
 def get_user_expense(budget):
     print(f"🎯 Getting User Expense")
@@ -34,10 +34,11 @@ def get_user_expense(budget):
         print("Select a category: ")
         for i, category_name in enumerate(expense_categories):
             print(f"  {i + 1}. {category_name}")
-        
+
         # Obtained user input for the selected expense category
         value_range = f"[1 - {len(expense_categories)}]"
-        selected_index = int(input(f"Enter a category number {value_range}: ")) - 1
+        selected_index = int(
+            input(f"Enter a category number {value_range}: ")) - 1
 
         # Ensured the selected category is valid and created an Expense object
         if selected_index in range(len(expense_categories)):
@@ -54,11 +55,11 @@ def get_user_expense(budget):
 def save_expense_to_file(expense: Expense, expense_file_path):
     print(f"🎯 Saving User Expense: {expense} to {expense_file_path}")
     with open(expense_file_path, "a") as f:
-        f.write(f"{expense.name},{expense.amount},{expense.category},{expense.budget}\n")
-        
+        f.write(
+            f"{expense.name},{expense.amount},{expense.category},{expense.budget}\n")
 
 
-# Calculated and displayed a summary of expenses 
+# Calculated and displayed a summary of expenses
 # by category and overall spending
 def summarize_expenses(expense_file_path, budget):
     print(f"🎯 Summarizing User Expense")
@@ -86,8 +87,8 @@ def summarize_expenses(expense_file_path, budget):
             else:
                 # Print a message for invalid lines
                 print(f"Ignored invalid line: {line}")
-    
-    # Enhanced the summary display 
+
+    # Enhanced the summary display
     # with total spending, remaining budget, and daily budget
     amount_by_category = {}
     for expense in expenses:
@@ -126,45 +127,38 @@ def ask_add_another_expense():
     return response == 'yes'
 
 
-
 # Set up the main function to organize the expense tracking process
 def main():
     print(f"🎯 Running Expense Tracker!")
 
+    # Prompted the user to input their budget for the month
+    budget = float(input("Enter your budget for the month: "))
 
-# Prompted the user to input their budget for the month
-budget = float(input("Enter your budget for the month: "))
+    # Define expenses_file_path
+    expense_file_path = "expenses.csv"
 
-# Define expenses_file_path
-expense_file_path = "expenses.csv"
+    # Create a new expenses.csv file or overwrite the existing one
+    with open(expense_file_path, "w") as f:
+        # Empty pass statement to create or clear the file
+        pass
+
 
 # The loop continues until the user decides not to add more expenses
 while True:
-        # Implement a function to gather user input for a specific expense
-        expense = get_user_expense(budget)
+    # Implement a function to gather user input for a specific expense
+    expense = get_user_expense(budget)
 
-        # Save the user's expense to a CSV file for record-keeping
-        save_expense_to_file(expense, expense_file_path)
+    # Save the user's expense to a CSV file for record-keeping
+    save_expense_to_file(expense, expense_file_path)
 
-        # Develop a function to read the expense file and provide a summary
-        summarize_expenses(expense_file_path, budget)
+    # Develop a function to read the expense file and provide a summary
+    summarize_expenses(expense_file_path, budget)
 
-        # Ask the user if they want to add another expense
-        if not ask_add_another_expense():
-            break
+    # Ask the user if they want to add another expense
+    if not ask_add_another_expense():
+        break
 
 
 # Ensured the main function runs when the script is executed directly
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
