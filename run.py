@@ -55,6 +55,12 @@ def get_user_expense(budget):
         print("Select a category: ")
         for i, category_name in enumerate(expense_categories):
             print(f"  {i + 1}. {category_name}")
+        
+        # Obtained user input for the selected expense category
+        value_range = f"[1 - {len(expense_categories)}]"
+        selected_index = int(input(f"Enter a category number {value_range}: ")) - 1
+
+        
 
 
 
